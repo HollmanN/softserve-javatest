@@ -1,0 +1,32 @@
+openapi: "3.0.3"
+info:
+  title: "SoftServe Test API"
+  description: "SoftServe Test API"
+  version: "1.0.0"
+servers:
+  - url: "https://localhost:8080"
+paths:
+  /duplicates:
+    post:
+      summary: "POST duplicates"
+      operationId: "removeDuplicates"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StringParserRecord"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"
+components:
+  schemas:
+    StringParserRecord:
+      type: "object"
+      properties:
+        input:
+          type: "string"
