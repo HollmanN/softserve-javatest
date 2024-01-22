@@ -18,7 +18,7 @@ public class StringParserServiceTest {
     public void whenStringHasDuplicates_thenRemoveDuplicates(){
         String input = "AAAABBBBBCCCCCDEEEE";
         String expected = "ABCDE";
-        String result = stringParserService.parseString(input);
+        String result = stringParserService.removeDuplicatesFromString(input);
         assert result.equals(expected);
     }
 
@@ -26,7 +26,7 @@ public class StringParserServiceTest {
     public void whenStringDoesntHasDuplicates_thenReturnSameString(){
         String input = "ABCDE";
         String expected = "ABCDE";
-        String result = stringParserService.parseString(input);
+        String result = stringParserService.removeDuplicatesFromString(input);
         assert result.equals(expected);
     }
 }
