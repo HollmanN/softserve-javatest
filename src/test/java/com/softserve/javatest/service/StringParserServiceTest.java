@@ -29,4 +29,20 @@ public class StringParserServiceTest {
         String result = stringParserService.removeDuplicatesFromString(input);
         assert result.equals(expected);
     }
+
+    @Test
+    public void whenStringHasNumbersAndDuplicates_thenRemoveDuplicates(){
+        String input = "1A111B23C3334DE55";
+        String expected = "1AB23C4DE5";
+        String result = stringParserService.removeDuplicatesFromString(input);
+        assert result.equals(expected);
+    }
+
+    @Test
+    public void whenStringHasSpecialCharactersAndDuplicates_thenRemoveDuplicates(){
+        String input = "1A1!!11B2%3C33&&34DE5\"5\"\"\"";
+        String expected = "1A!B2%3C&4DE5\"";
+        String result = stringParserService.removeDuplicatesFromString(input);
+        assert result.equals(expected);
+    }
 }
